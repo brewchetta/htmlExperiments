@@ -1,0 +1,42 @@
+<!DOCTYPE=HTML>
+<html>
+  <head>
+    <title>Text and Image Changer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $('#bOne').click(function(){
+        removeItems();
+        $("#currentText").append("<p>This is an image of a manticore.</p>");
+        $("#currentImage").append("<img></img>")
+        $('img').attr('src', "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Manticore_-_British_Library_Royal_12_F_xiii_f24v_%28detail%29.jpg/220px-Manticore_-_British_Library_Royal_12_F_xiii_f24v_%28detail%29.jpg")
+      });
+      $('#bTwo').click(function(){
+        removeItems();
+        $("#currentText").append("<p>This is an image of a phoenix.</p>");
+        $("#currentImage").append("<img></img>")
+        $('img').attr('src', "https://www.akg-images.de/Docs/AKG/Media/TR5/c/8/5/3/AKG44812.jpg")
+      });
+      $('#bThree').click(function(){
+        removeItems();
+        $("#currentText").append("<p>This is an image of a treant.</p>");
+        $("#currentImage").append("<img></img>")
+        $('img').attr('src', "https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Treant.JPG/200px-Treant.JPG")
+      });
+    });
+    function removeItems() {
+      $('#currentImage').children().remove();
+      $('#currentText').children().remove();
+    }
+    </script>
+  </head>
+
+  <body>
+    <h1>This is a test</h1>
+    <div id='currentImage'></div>
+    <div id='currentText'></div>
+    <button id='bOne'>Button One</button>
+    <button id='bTwo'>Button Two</button>
+    <button id='bThree'>Button Three</button>
+  </body>
+</html>

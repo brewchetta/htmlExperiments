@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title></title>
+    <meta content="">
+    <style></style>
+  </head>
+  <body>
+    <button id="bt1">Click me!</button>
+    <p id="txtAdd"></p>
+
+    <script>
+    document.getElementById("bt1").addEventListener("click", textChange);
+    var textAdd = "This text should slowly appear on the screen.";
+
+    function textChange (element) {
+      document.getElementById("txtAdd").innerHTML = ""
+      var textArray = textAdd.split("");
+      var i = 0;
+      setInterval(function() {
+        if(i < textArray.length) {
+          document.getElementById("txtAdd").innerHTML = document.getElementById("txtAdd").innerHTML + textArray[i];
+          i++;
+        } else {
+          clearInterval();
+        };
+      }, 100);
+    }
+
+    </script>
+  </body>
+</html>
