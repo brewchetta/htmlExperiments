@@ -1,0 +1,19 @@
+<!DOCTYPE=html>
+<html>
+<head>
+  <title>Time Until Birthdays</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    var today = new Date();
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+    'August', 'September', 'October', 'November', 'December a.k.a Birthday Month!'];
+    document.getElementById('curDate').innerHTML = 'Today is ' + months[today.getMonth()] + " " + today.getDate() + ".";
+  });
+  </script>
+</head>
+<body>
+  <h1>This is a test</h1>
+  <p id='curDate'></p>
+</body>
+</html>
