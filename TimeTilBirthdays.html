@@ -10,16 +10,43 @@
     'August', 'September', 'October', 'November', 'December'];
     document.getElementById('curDate').innerHTML = 'Today is ' + months[today.getMonth()] + " " + today.getDate() + ".";
   });
-  // The above tells the Date
-  // More code should tell whether we're past a person's birthday with if else and then count days
+  </script>
+  <script>
+  var today = new Date();
+  $(document).ready(function(){
+    if (today.getMonth() != 11) {
+      document.getElementById('tilChett').innerHTML = (11 - today.getMonth()) + ' months until Chett\'s birthday.';
+    } else if (today.getDate() < 5) {
+      document.getElementById('tilChett').innerHTML = (5 - today.getDate()) + 'days until Chett\'s birthday!';
+    } else if (today.getDate() == 5) {
+      document.getElementById('tilChett').innerHTML = 'Today is Chett\'s birthday!';
+    } else {
+      document.getElementById('tilChett').innerHTML = '12 months until Chett\'s birthday.'
+    }
+  });
+  </script>
+  <script>
+  var today = new Date();
+  $(document).ready(function(){
+    if (today.getMonth() < 6) {
+      document.getElementById('tilJesse').innerHTML = (6 - today.getMonth()) + ' months until Jesse\'s birthday.';
+    } else if (today.getMonth() > 6) {
+      document.getElementById('tilJesse').innerHTML = (18 - today.getMonth()) + ' months until Jesse\'s birthday.'
+    } else if (today.getDate() < 24) {
+      document.getElementById('tilJesse').innerHTML = (24 - today.getDate()) + ' days until Jesse\'s birthday!';
+    } else if (today.getDate() == 24) {
+      document.getElementById('tilJesse').innerHTML = 'Today is Jesse\'s birthday!';
+    } else {
+      document.getElementById('tilJesse').innerHTML = '12 months until Jesse\'s birthday.';
+    }
+  });
+  // Getting days and months until a birthday involves a lot of extra work I'm not gonna do for this project
   </script>
 </head>
 <body>
   <h1>This is a test</h1>
   <p id='curDate'></p>
   <p id='tilChett'></p>
-  <p id='tilKyla'></p>
-  <p id='tilHelen'></p>
-  <p id='tilBill'></p>
+  <p id='tilJesse'></p>
 </body>
 </html>
