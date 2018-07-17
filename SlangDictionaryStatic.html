@@ -1,0 +1,38 @@
+<!DOCTYPE=html>
+<html>
+<head>
+  <title>Slang Mouseover Static</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $('#babadookPop').hide();
+    $('#babadook').hover(function(){
+      $('#babadookPop').fadeIn(500);
+    },
+    function(){
+      $('#babadookPop').fadeOut(500);
+    });
+  });
+// This is a basic tooltip I'll be utilizing in another project
+// The idea is to create tooltips for slang
+</script>
+<style>
+#babadookPop{
+  position: absolute;
+  display: inline-block;
+  background: black;
+  color: white;
+  max-width: 300px;
+  text-align: center;
+  border-radius: 5px;
+  margin-left: 8px;
+  margin-top: 8px;
+}
+</style>
+<body>
+  <h1>This is a test</h1>
+  <p style='position:relative;'>We're here to talk about the
+    <span id='babadook' style='color:red;'>babadook</span>
+    <span id='babadookPop'>A lesbian icon</span> because she's important.</p>
+</body>
+</html>
