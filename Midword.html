@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Midword Experiment</title>
+    <meta content="">
+    <style></style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  </head>
+  <body>
+
+    <h3>This is a test</h3>
+    <div ng-app='midWordApp' ng-controller='wordInput'>
+      <p>Put a word here: <input type='text' ng-model='word'></p>
+      <h3>{{ word | midLetter }}</h3>
+      <p>This should return the middle character(s) of a word you put in.</p>
+
+    </div>
+
+    <script>
+    var app = angular.module('midWordApp', []);
+
+    app.controller('wordInput', function($scope) {
+      $scope.word = '';
+    });
+
+    app.filter('midLetter', function () {
+      return function (w) {
+        if (w.length == 0) {
+          return "Type a word!"
+        }
+        else if (w.length % 2 == 0) {
+          return (w[(w.length-1)/2-0.5]+w[(w.length-1)/2+0.5])
+        }
+        else {
+          return (w[(w.length-1)/2])
+        };
+      };
+    });
+
+    </script>
+
+
+
+  </body>
+</html>
