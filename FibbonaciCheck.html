@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fibonacci Checker</title>
+    <meta content="">
+    <style></style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  </head>
+  <body>
+
+    <h2>This is a test</h2>
+    <div ng-app='fibCheckApp' ng-controller='numInput'>
+      <p>Put a number here to see if it's part of the Fibonacci sequence:<br> <input type='text' ng-model='num'></p>
+      <h2 style="color:blue;">{{ num | fibRunner }}</h2>
+
+    </div>
+
+    <script>
+    var app = angular.module('fibCheckApp', []);
+
+    app.controller('numInput', function($scope) {
+      $scope.num = '6';
+    });
+
+    app.filter('fibRunner', function () {
+      return function (n) {
+        var lower = 1;
+        var higher = 2;
+        if (n == 1) {
+          return "Of course 1 is part of the Fibonacci!";
+        }
+        else {
+          while (n > higher) {
+            lowerT = higher;
+            higher = higher + lower;
+            lower = lowerT;
+          };
+          if (n == higher) {
+            return "Fibonacci!";
+          }
+          else {
+            return 'Not part of the Fibonacci...';
+          };
+        };
+      };
+    });
+
+    </script>
+
+
+
+  </body>
+</html>
